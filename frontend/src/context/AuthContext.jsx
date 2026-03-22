@@ -24,7 +24,7 @@ export const AuthProvider = ({ children }) => {
 
   const checkRegistrationStatus = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/auth/check-registration');
+      const response = await axios.get('https://dei-invoice-system.onrender.com/api/auth/check-registration');
       setIsRegistrationOpen(response.data.isRegistrationOpen);
     } catch (error) {
       console.error('Error checking registration status:', error);
@@ -33,7 +33,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', {
+      const response = await axios.post('https://dei-invoice-system.onrender.com/api/auth/login', {
         email,
         password
       });
@@ -54,7 +54,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (name, email, password) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/register', {
+      const response = await axios.post('https://dei-invoice-system.onrender.com/api/auth/register', {
         name,
         email,
         password
